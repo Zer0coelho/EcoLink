@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset e fontes */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #ffffff;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Cores e variáveis */
+:root {
+    --primary-color: #047857;
+    --background: #ffffff;
+    --foreground: #111111;
+    --card: #ffffff;
+    --border: #e5e5e5;
+    --radius: 0.5rem;
+}
+
+/* Layout básico */
+header, nav, footer {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navegar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Menu */
+nav ul {
+    align-items: center;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    padding: 0;
+}
+
+nav ul li a {
+    position: relative;
+    padding: 8px 0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #bbf7d0;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a.active {
+    color: #bbf7d0;
+}
+
+nav ul li a.active::after {
+    width: 100%;
+    background-color: #bbf7d0;
+    animation: underline-slide 0.5s ease;
+}
+
+@keyframes underline-slide {
+    0% {
+        width: 0%;
+        left: 0;
+    }
+    100% {
+        width: 100%;
+        left: 0;
+    }
+}
+
+/* Botões */
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Formulários */
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+/* Rodapé */
+footer {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Cards */
+.card {
+    background-color: var(--card);
+    padding: 20px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ====== Seção principal com imagem de fundo ====== */
+.hero {
+    position: relative;
+    background: url('upload/funcoEcoLink.png') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Camada escura sutil sobre a imagem para contraste */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* Ajuste o valor para mais/menos escurecimento */
+    z-index: 0;
+}
+
+.hero h1, 
+.hero p, 
+.hero .btn {
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero {
+        padding: 60px 15px;
+    }
+}

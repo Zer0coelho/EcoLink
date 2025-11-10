@@ -1,0 +1,232 @@
+/* =====================
+ESTILO MODERNO - DOAÇÃO
+===================== */
+
+body {
+    background: #f5f9f6;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* Título principal */
+main.container h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2f855a;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #2f855a;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Cada bloco de doação */
+.doacao-destaque {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    margin: 25px auto;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+    max-width: 1100px;
+}
+
+.doacao-destaque:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Imagem da causa */
+.doacao-imagem {
+    position: relative;
+    flex: 2;
+    min-height: 280px;
+    overflow: hidden;
+}
+
+.doacao-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.doacao-destaque:hover .doacao-imagem img {
+    transform: scale(1.05);
+}
+
+/* Informações da causa */
+.doacao-info-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.05));
+    color: #fff;
+}
+
+.doacao-info-overlay h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #f4fdf7;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+.doacao-info-overlay p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Área do QR Code */
+.qr-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #e6f3ec;
+    padding: 30px 20px;
+    border-left: 2px solid #cde6d6;
+    transition: background 0.3s ease;
+}
+
+.qr-area:hover {
+    background: #d4f0e0;
+}
+
+.qr-area img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #2f855a;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.qr-area span {
+    font-size: 0.9rem;
+    color: #2f855a;
+    font-weight: 600;
+}
+
+/* Cartões simples do banco (parte final) */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    margin: 15px auto;
+    max-width: 700px;
+    transition: transform 0.2s ease;
+}
+.card:hover {
+    transform: translateY(-3px);
+}
+.card p {
+    margin: 5px 0;
+    color: #2d3748;
+}
+
+/* Responsivo */
+@media (max-width: 850px) {
+    .doacao-destaque {
+        flex-direction: column;
+    }
+
+    .qr-area {
+        border-left: none;
+        border-top: 2px solid #cde6d6;
+        width: 100%;
+    }
+}
+
+/* ====== Destaque de Doação com overlay ====== */
+.doacao-destaque {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+    gap: 20px;
+}
+
+.doacao-imagem {
+    position: relative;
+    flex: 2;
+    min-height: 250px;
+}
+
+.doacao-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.doacao-info-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.85); /* fundo branco semitransparente */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.doacao-info-overlay h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.doacao-info-overlay p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.qr-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.qr-area img {
+    width: 180px;
+    height: 180px;
+    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+}
+
+.qr-area span {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .doacao-destaque {
+        flex-direction: column;
+    }
+    .qr-area {
+        padding: 15px 0;
+    }
+    .doacao-info-overlay {
+        padding: 15px;
+    }
+}
